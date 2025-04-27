@@ -1,0 +1,11 @@
+# Port Mappings: <LocalPort> <BeaconPort> <Protocol>
+3389 33389 TCP
+445 33445 TCP
+161 3161 UDP
+
+# Settings
+EnableEventLog true
+EnableFileLog false
+
+# Optional
+Version 1.0
