@@ -1,15 +1,15 @@
-WindowsServicePortBeacon
+Windows Service :: Port Beacon
 =========================
 
 Created by Patrick
-GitHub: https://github.com/SaintPaddy/WindowsServicePortBeacon
+GitHub: https://github.com/SaintPaddy/PortBeaconWindowsService
 Version: v1.0
 
 ---
 
 Description:
 -------------
-WindowsServicePortBeacon is a lightweight Windows Service that monitors local ports 
+PortBeacon is a lightweight Windows Service that monitors local ports 
 and signals their availability by opening "beacon ports" over TCP or UDP.
 
 It allows a scanning tool to check specific custom beacon ports without directly 
@@ -75,5 +75,5 @@ Logging:
 Credits:
 ---------
 PortBeaconService v1.0 - Created by Patrick
-GitHub Repository: https://github.com/SaintPaddy/WindowsServicePortBeacon
+GitHub Repository: https://github.com/SaintPaddy/PortBeaconWindowsService
 
