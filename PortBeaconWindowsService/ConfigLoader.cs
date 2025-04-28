@@ -16,7 +16,32 @@ namespace PortBeaconWindowsService
             var config = new ConfigLoader();
 
             if (!File.Exists(filePath))
-                throw new FileNotFoundException("Configuration file not found: " + filePath);
+            {
+                Logger.Log("Configuration file not found. Creating default config.txt...");
+
+                try
+                {
+                    File.WriteAllText(filePath,
+@"# Port Mappings: <LocalPort> <BeaconPort> <Protocol>
+3389 33389 TCP
+445 33445 TCP
+161 3161 UDP
+
+# Settings
+EnableEventLog true
+EnableFileLog false
+
+# Optional
+Version 1.0
+");
+                    Logger.Log("Default configuration file created at: " + filePath);
+                }
+                catch (Exception ex)
+                {
+                    Logger.Log("Failed to create default configuration file: " + ex.Message);
+                    throw;
+                }
+            }
 
             var lines = File.ReadAllLines(filePath);
             foreach (var line in lines)
