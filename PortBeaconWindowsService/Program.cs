@@ -1,11 +1,14 @@
-using System;
+﻿using System;
 using System.ServiceProcess;
 
 namespace PortBeaconWindowsService
 {
     static class Program
     {
-        static void Main(string[] args)
+        /// <summary>
+        /// The main entry point for the application.
+        /// </summary>
+        static void Main()
         {
             ServiceBase[] ServicesToRun;
             ServicesToRun = new ServiceBase[]

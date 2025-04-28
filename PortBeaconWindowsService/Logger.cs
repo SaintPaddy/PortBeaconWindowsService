@@ -1,6 +1,7 @@
 using System;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 
 namespace PortBeaconWindowsService
 {
@@ -62,15 +63,34 @@ namespace PortBeaconWindowsService
                     var fileInfo = new FileInfo(logFileName);
                     if (fileInfo.Length > maxFileSizeBytes)
                     {
-                        string archiveName = $"service-{DateTime.Now.ToString("yyyyMMdd-HHmmss")}.log";
+                        string archiveName = $"service-{DateTime.Now:yyyyMMdd-HHmmss}.log";
                         File.Move(logFileName, archiveName);
+
+                        var logFiles = Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory, "service-*.log")
+                            .OrderByDescending(f => File.GetCreationTime(f))
+                            .ToList();
+
+                        int maxLogs = ConfigLoader.Current?.MaxLogFiles ?? 10;
+
+                        if (maxLogs > 0 && logFiles.Count > maxLogs)
+                        {
+                            foreach (var oldFile in logFiles.Skip(maxLogs))
+                            {
+                                File.Delete(oldFile);
+                            }
+                        }
                     }
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                // Ignore rotation errors
+                if (ConfigLoader.Current?.EnableDebugLog == true)
+                {
+                    Log($"[DEBUG] Error during log rotation: {ex.Message}");
+                }
             }
         }
+
+
     }
 }
