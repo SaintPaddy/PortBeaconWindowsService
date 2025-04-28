@@ -132,7 +132,17 @@ Event Viewer:
 ---
 
 Uninstallation:
----------------
+-------------
+You have two options:
+
+#### Option 1: Uninstall using the MSI package
+
+1. Go to the Control Panel / Add Remove Programs / etc to uninstall the software. 
+
+---
+
+#### Option 2: If build manually from source code
+
 1. Run `uninstall_service.bat`.
 2. Optionally, manually delete the installation folder.
 
