@@ -4,7 +4,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 
-namespace WindowsServicePortBeacon
+namespace PortBeaconWindowsService
 {
     public class UdpBeaconServer : IBeaconServer
     {
@@ -51,7 +51,7 @@ namespace WindowsServicePortBeacon
                         if (data != null && data.Length > 0)
                         {
                             byte[] reply = Encoding.ASCII.GetBytes(
-                                $"PortBeaconService v1.0 - Port UDP {monitoredPort} Active\r\nCreated by Patrick - https://github.com/SaintPaddy/WindowsServicePortBeacon\r\n"
+                                $"PortBeaconService v1.0 - Port UDP {monitoredPort} Active\r\nCreated by Patrick - https://github.com/SaintPaddy/PortBeaconWindowsService\r\n"
                             );
                             udpClient.Send(reply, reply.Length, remoteEP);
                         }

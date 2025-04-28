@@ -1,4 +1,4 @@
-namespace WindowsServicePortBeacon
+namespace PortBeaconWindowsService
 {
     public interface IBeaconServer
     {

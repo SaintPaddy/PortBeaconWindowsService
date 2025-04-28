@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 
-namespace WindowsServicePortBeacon
+namespace PortBeaconWindowsService
 {
     public class PortMonitor
     {

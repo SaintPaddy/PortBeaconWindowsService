@@ -4,7 +4,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 
-namespace WindowsServicePortBeacon
+namespace PortBeaconWindowsService
 {
     public class TcpBeaconServer : IBeaconServer
     {
@@ -73,7 +73,7 @@ namespace WindowsServicePortBeacon
             try
             {
                 NetworkStream stream = client.GetStream();
-                string banner = $"PortBeaconService v1.0 - Port TCP {monitoredPort} Active\r\nCreated by Patrick - https://github.com/SaintPaddy/WindowsServicePortBeacon\r\n";
+                string banner = $"PortBeaconService v1.0 - Port TCP {monitoredPort} Active\r\nCreated by Patrick - https://github.com/SaintPaddy/PortBeaconWindowsService\r\n";
                 byte[] data = Encoding.ASCII.GetBytes(banner);
                 stream.Write(data, 0, data.Length);
                 stream.Flush();

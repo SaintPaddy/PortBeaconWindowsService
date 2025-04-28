@@ -2,7 +2,7 @@ using System;
 using System.ServiceProcess;
 using System.Threading;
 
-namespace WindowsServicePortBeacon
+namespace PortBeaconWindowsService
 {
     public class PortBeaconService : ServiceBase
     {
@@ -15,7 +15,7 @@ namespace WindowsServicePortBeacon
 
         protected override void OnStart(string[] args)
         {
-            Logger.Log("PortBeaconService v1.0 - Created by Patrick - https://github.com/SaintPaddy/WindowsServicePortBeacon");
+            Logger.Log("PortBeaconService v1.0 - Created by Patrick - https://github.com/SaintPaddy/PortBeaconWindowsService");
 
             try
             {

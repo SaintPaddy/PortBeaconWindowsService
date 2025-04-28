@@ -2,7 +2,7 @@ using System;
 using System.Diagnostics;
 using System.IO;
 
-namespace WindowsServicePortBeacon
+namespace PortBeaconWindowsService
 {
     public static class Logger
     {

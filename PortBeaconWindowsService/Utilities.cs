@@ -1,6 +1,6 @@
 using System;
 
-namespace WindowsServicePortBeacon
+namespace PortBeaconWindowsService
 {
     public static class Utilities
     {
