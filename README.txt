@@ -15,7 +15,7 @@ The service dynamically listens on configurable Beacon ports if the correspondin
 
 Features:
 ---------
-- Monitor multiple TCP and UDP ports.
+- Monitor multiple TCP and UDP ports (where UDP is a bit more tricky, works best with TCP ports).
 - Open safe Beacon ports dynamically if local service is active.
 - Recheck local port status at configurable intervals.
 - Two local port checking methods:
