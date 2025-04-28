@@ -11,8 +11,7 @@ namespace PortBeaconWindowsService
 
         public void Start()
         {
-            string exeFolder = AppDomain.CurrentDomain.BaseDirectory;
-            config = ConfigLoader.Load(System.IO.Path.Combine(exeFolder, "config.txt"));
+            config = ConfigLoader.Load("config.txt");
 
             Logger.Configure(config.EnableEventLog, config.EnableFileLog);
 
