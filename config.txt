@@ -1,11 +1,18 @@
 # Port Mappings: <LocalPort> <BeaconPort> <Protocol>
+# 445 33445 TCP
+# 161 3161 UDP
 3389 33389 TCP
-445 33445 TCP
-161 3161 UDP
 
 # Settings
+RecheckIntervalSeconds 30
+PortCheckMethod Connect
+EnableDebugLog false
 EnableEventLog true
 EnableFileLog false
+MaxLogFiles 10
 
 # Optional
 Version 1.0
+
+# Documentation
+https://github.com/SaintPaddy/PortBeaconWindowsService
